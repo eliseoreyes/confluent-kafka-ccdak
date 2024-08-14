@@ -28,11 +28,11 @@ public class Main {
 		String line = "";
 
 		while ((line = br.readLine()) != null) {
-		  
+		
 	           String[] lineArray = line.split(":");
 		   String key = lineArray[0];
 		   String value = lineArray[1];
-			
+	
 		   producer.send(new ProducerRecord<>("inventory_purchases", key, value));
 		   
 		   if (key.equals("apples")) {
