@@ -23,10 +23,10 @@ public class ProducerMain {
 
           KafkaProducer<String, Purchase> producer = new KafkaProducer<String, Purchase>(props);
 
-          Purchase apples = new Purchase(1,"apples", 17);
+          Purchase apples = new Purchase(1,"apples", 17, 77543);
           producer.send(new ProducerRecord<String, Purchase>("inventory_purchases", apples.getId().toString(), apples));
 
-          Purchase oranges = new Purchase(2, "oranges", 5);
+          Purchase oranges = new Purchase(2, "oranges", 5, 56878);
           producer.send(new ProducerRecord<String, Purchase>("inventory_purchases", oranges.getId().toString(), oranges));
 
           producer.close();
